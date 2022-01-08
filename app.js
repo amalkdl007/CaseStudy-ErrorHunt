@@ -2,6 +2,7 @@ const express = require('express');
 const path = require ('path'); 
 const cors = require('cors');
 const bodyParser = require('body-parser');   //part1 point2
+const PORT = 5000;
 
 const nav= [
     {
@@ -24,9 +25,9 @@ const nav= [
 
 const loginRouter = require('./src/routes/loginroute');
 const signupRouter = require('./src/routes/signuproute');
-const homeRouter = require('./src/routes/homeroute');        //part#! point3
+const homeRouter = require('./src/routes/homeroute');        //part#! point3 
 const booksRouter = require('./src/routes/booksroute');      
-const authorsRouter = require('./src/routes/authorsroute'); 
+const authorsRouter = require('./src/routes/authorsroute');  
 
 const app = new express;                      //part#1 point1 
 
@@ -56,8 +57,7 @@ app.get('/',function(req,res){
 
 
 
-// port name changed to 5000
 
-app.listen(5000,()=>{
-    console.log("Server Ready on 5000");            //part#1 point5
+app.listen(PORT,()=>{
+    console.log(`Server Ready on ${PORT}`);            //part#1 point5
 });
