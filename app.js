@@ -1,7 +1,7 @@
 const express = require('express'); 
 const path = require ('path'); 
 const cors = require('cors');
-// const bodyParser = require('body-parser');   //part1 point2
+const bodyParser = require('body-parser');   //part1 point2
 
 const nav= [
     {
@@ -28,7 +28,7 @@ const homeRouter = require('./src/routes/homeroute');        //part#! point3
 const booksRouter = require('./src/routes/booksroute');      
 const authorsRouter = require('./src/routes/authorsroute'); 
 
-const app = express();                      //part#1 point1 
+const app = new express;                      //part#1 point1 
 
 
 app.set('views','./src/views'); 
@@ -36,7 +36,7 @@ app.set('view engine','ejs');
 
 
 app.use(cors());                            // part#2 point7
-app.use(express.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname , '/public'))); 
 
