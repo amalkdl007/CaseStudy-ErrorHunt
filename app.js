@@ -1,7 +1,7 @@
 const express = require('express'); 
 const path = require ('path'); 
 const cors = require('cors');
-const bodyParser = require('body-parser');   //part1 point2
+// const bodyParser = require('body-parser');   //part1 point2
 
 const nav= [
     {
@@ -36,7 +36,7 @@ app.set('view engine','ejs');
 
 
 app.use(cors());                            // part#2 point7
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname , '/public'))); 
 
