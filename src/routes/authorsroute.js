@@ -34,7 +34,8 @@ authorsRouter.post('/add', function (req, res) {
 
     var item={
         title:req.body.title,
-        image:req.body.images,
+        image:req.body.filename,
+        //part#2 point8
         about:req.body.about
     }
     console.log(item)  ;
@@ -68,7 +69,7 @@ authorsRouter.post('/delete', function (req, res) {
 
     const id = req.body.id;  
 
-    authordata.findOneAndDelete({ _id: id })
+    authordata.findOneAndDelete({ _id: id }) //part2 point9
         .then(function () {
 
             res.redirect('/authors')
